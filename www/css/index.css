@@ -17,6 +17,7 @@ body {
     left: 0px;
     top: 0px;
     width: 100%;
+    z-index: 2;
 }
 
 #companyName {
@@ -41,11 +42,19 @@ body {
     background: none;
 }
 
-#optionsList {
+.optionsList {
     background: rgba(0, 0, 0, .75);
     position: fixed;
     width: 100%;
     left: 0px;
+    top: -22em;
+    -webkit-transition: top .3s linear;
+	-moz-transition: top .3s linear;
+	-o-transition: top .3s linear;
+	transition: top .3s linear;
+}
+
+.optionsList-change {
     top: 3em;
 }
 

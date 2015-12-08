@@ -23,6 +23,7 @@ window.onload = function() {
 	
 	function autoHideMenu() {
 		optionsMenu.style.display = "none";
+		$(".optionsList").toggleClass("optionsList-change");
 	}
 	
 	function hideOptionsMenu(menu) {
@@ -66,6 +67,12 @@ window.onload = function() {
 	document.getElementById("optionsButton").addEventListener("click", function() {
 		toggleOptionsMenu(optionsMenu);
 	}, false);
+	
+	$(function() {
+		$("#optionsButton").click(function() {
+			$(".optionsList").toggleClass("optionsList-change");
+		});
+	});
 	
 	var menuLinks = document.getElementById("optionsList").children;
 	
