@@ -53,6 +53,14 @@ window.onload = function() {
     return (style.display === 'none')
 	}
 	
+	// Resets all the mugs to empty
+	function resetMugs() {
+		for (var i = 0; i < emptyMugs.length; i++) {
+			emptyMugs[i].className = "emptyMug";
+			emptyMugs[i].src = "/img/beerMugs/emptyMug.png";
+		}
+	}
+	
 	// Varables for lining up the notes.
 	var negHalfHeight;
 	var notes = document.getElementsByClassName("inlineNotes");
@@ -81,19 +89,30 @@ window.onload = function() {
 		menuLinks[i].firstElementChild.addEventListener("click", autoHideMenu, false);
 	};
 	
-	// Add event listeners for the mugs
-	// var emptyMugs = document.getElementsByClassName("emptyMugs");
-	// for (var i = 0; i < emptyMugs.length; i++) {
-	// 	emptyMugs[i].addEventListener("click", function {
-			
-	// 	});
-	// };
+	document.getElementById("resetMugs").addEventListener("click", resetMugs, false);
 	
-	$(function() {
-		$(".emptyMug").click(function() {
-			$(".emptyMug").toggleClass("emptyMug-change");
-		});
-	});
+	// Event listeners for transition ends
+	var emptyMugs = document.getElementsByClassName("emptyMug");
+	
+	for (var i = 0; i < emptyMugs.length; i++) {
+		emptyMugs[i].addEventListener("click", function() {
+			this.className += " emptyMug-change";
+		}, false);
+	};
+	
+	// Toggle the images
+	for (var i = 0; i < emptyMugs.length; i++) {
+		emptyMugs[i].addEventListener("transitionend", function() {
+			if (this.src.indexOf("empty") != -1 && this.className.indexOf("change") != -1) {
+				this.src = "/img/beerMugs/fullMug.png";
+				this.className = "emptyMug";
+			}
+			else if (this.src.indexOf("full") != -1 && this.className.indexOf("change") != -1) {
+				this.src = "/img/beerMugs/emptyMug.png";
+				this.className = "emptyMug";
+			}
+		}, false);
+	};
 	
 	// Smooth Scrolling
 	$('a[href^="#"]').on('click', function(event) {
