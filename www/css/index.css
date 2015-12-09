@@ -74,6 +74,21 @@ body {
     color: white;
 }
 
+.emptyMug {
+    -webkit-transition: margin-left 2s linear;
+	-moz-transition: margin-left 2s linear;
+	-o-transition: margin-left 2s linear;
+	transition: margin-left 2s linear;
+}
+
+.emptyMug-change {
+    margin-left: 100%;
+}
+
+.fullMug {
+    display: none;
+}
+
 .innerList {
     list-style-type: none;
 }

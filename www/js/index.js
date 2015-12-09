@@ -68,17 +68,32 @@ window.onload = function() {
 		toggleOptionsMenu(optionsMenu);
 	}, false);
 	
+	// Toggles a class when options button is pressed
 	$(function() {
 		$("#optionsButton").click(function() {
 			$(".optionsList").toggleClass("optionsList-change");
 		});
 	});
 	
+	// Add event listeners for every menu option
 	var menuLinks = document.getElementById("optionsList").children;
-	
 	for (var i = 0; i < menuLinks.length; i++) {
 		menuLinks[i].firstElementChild.addEventListener("click", autoHideMenu, false);
-	}
+	};
+	
+	// Add event listeners for the mugs
+	// var emptyMugs = document.getElementsByClassName("emptyMugs");
+	// for (var i = 0; i < emptyMugs.length; i++) {
+	// 	emptyMugs[i].addEventListener("click", function {
+			
+	// 	});
+	// };
+	
+	$(function() {
+		$(".emptyMug").click(function() {
+			$(".emptyMug").toggleClass("emptyMug-change");
+		});
+	});
 	
 	// Smooth Scrolling
 	$('a[href^="#"]').on('click', function(event) {
