@@ -57,7 +57,7 @@ window.onload = function() {
 	function resetMugs() {
 		for (var i = 0; i < emptyMugs.length; i++) {
 			emptyMugs[i].className = "emptyMug";
-			emptyMugs[i].src = "/img/beerMugs/emptyMug.png";
+			emptyMugs[i].src = "img/beerMugs/emptyMug.png";
 		}
 	}
 	
@@ -102,13 +102,13 @@ window.onload = function() {
 	
 	// Toggle the images
 	for (var i = 0; i < emptyMugs.length; i++) {
-		emptyMugs[i].addEventListener("transitionend", function() {
+		emptyMugs[i].addEventListener("webkitTransitionEnd", function() {
 			if (this.src.indexOf("empty") != -1 && this.className.indexOf("change") != -1) {
-				this.src = "/img/beerMugs/fullMug.png";
+				this.src = "img/beerMugs/fullMug.png";
 				this.className = "emptyMug";
 			}
 			else if (this.src.indexOf("full") != -1 && this.className.indexOf("change") != -1) {
-				this.src = "/img/beerMugs/emptyMug.png";
+				this.src = "img/beerMugs/emptyMug.png";
 				this.className = "emptyMug";
 			}
 		}, false);
@@ -129,5 +129,4 @@ window.onload = function() {
 	hideOptionsMenu(document.getElementById("optionsList"));
 	setBackgrounds();
 	setInlineNoteMargins();
-	
 };
