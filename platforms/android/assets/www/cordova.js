@@ -1529,8 +1529,14 @@ module.exports = {
         };
 
         // Add hardware MENU and SEARCH button handlers
-        cordova.addDocumentEventHandler('menubutton');
-        cordova.addDocumentEventHandler('searchbutton');
+        var menuButtonChannel = cordova.addDocumentEventHandler('menubutton');
+        menuButtonChannel.onHasSubscribersChange = function() {
+            exec(null, null, APP_PLUGIN_NAME, "overrideButton", ['menubutton', this.numHandlers == 1]);
+        };
+        var searchButtonChannel = cordova.addDocumentEventHandler('searchbutton');
+        searchButtonChannel.onHasSubscribersChange = function() {
+            exec(null, null, APP_PLUGIN_NAME, "overrideButton", ['searchbutton', this.numHandlers == 1]);
+        };
 
         function bindButtonChannel(buttonName) {
             // generic button bind used for volumeup/volumedown buttons

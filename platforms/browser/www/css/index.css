@@ -47,7 +47,13 @@ body {
     position: fixed;
     width: 100%;
     left: 0px;
-    top: -22em;
+    top: -200em;
+    z-index: 1;
+    -webkit-transform: translatez(0);
+    -moz-transform: translatez(0);
+    -ms-transform: translatez(0);
+    -o-transform: translatez(0);
+    transform: translatez(0);
     -webkit-transition: top .3s linear;
 	-moz-transition: top .3s linear;
 	-o-transition: top .3s linear;
@@ -74,14 +80,19 @@ body {
     color: white;
 }
 
-.emptyMug {
+.mug {
+    -webkit-transform: translatez(0);
+    -moz-transform: translatez(0);
+    -ms-transform: translatez(0);
+    -o-transform: translatez(0);
+    transform: translatez(0);
     -webkit-transition: margin-left .8s ease-in;
 	-moz-transition: margin-left .8s ease-in;
 	-o-transition: margin-left .8s ease-in;
 	transition: margin-left .8s ease-in;
 }
 
-.emptyMug-change {
+.mug-change {
     margin-left: 100%;
 }
 
