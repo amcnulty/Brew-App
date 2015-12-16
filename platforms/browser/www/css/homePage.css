@@ -1,13 +1,41 @@
-#app {
-	position: fixed;
-	left: 0px;
-	top: 0px;
-}
-
-#navigation {
-	width: 80%;
-	margin-left: 10%;
-	height: 80%;
-	margin-top: 20%;
-	background-color: Red;
+@media (orientation: landscape), (orientation: portrait) {
+	#app {
+		position: fixed;
+		left: 0px;
+		top: 0px;
+		background-color: darkblue;
+	}
+	
+	#navigation {
+		position: relative;
+		width: 70%;
+		right: -15%;
+		height: 70%;
+		top: 15%;
+		float: left;
+		background-color: Red;
+	}
+	
+	.buttonContain {
+		width: 100%;
+		height: 33%;
+	}
+	
+	.buttonContain a {
+		position: relative;
+		display: inline-block;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
+		transform: translateX(-50%);
+	}
+	
+	.navButs {
+		-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
+		position: relative;
+		border-radius: 45%;
+	}
 }
