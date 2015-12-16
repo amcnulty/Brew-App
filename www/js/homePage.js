@@ -1,4 +1,12 @@
 window.onload = function() {
+	function setButtonColors() {
+		var lightBeer = "rgb(251, 177, 17)";
+		var darkBeer = "rgb(191, 75, 00)";
+		for (var i = 0; i < buttons.length; i++) {
+			if (i % 2 === 0) buttons[i].style.backgroundColor = lightBeer;
+			else buttons[i].style.backgroundColor = darkBeer;
+		}
+	}
 	
 	function calculateWindowSize() {
 		windowWidth = $(window).width();
@@ -31,5 +39,6 @@ window.onload = function() {
 	// Event Listener for orientation change
 	window.addEventListener("orientationchange", orientChange, false);
 	
+	setButtonColors();
 	orientChange();
 }

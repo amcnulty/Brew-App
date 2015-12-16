@@ -1,9 +1,20 @@
+html {
+	background: url(/img/backgrounds/beerBubbles.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+	background-size: cover;
+}
+
+body {
+	font-size: 100%;
+}
+
 @media (orientation: landscape), (orientation: portrait) {
 	#app {
 		position: fixed;
 		left: 0px;
 		top: 0px;
-		background-color: darkblue;
 	}
 	
 	#navigation {
@@ -13,7 +24,7 @@
 		height: 70%;
 		top: 15%;
 		float: left;
-		background-color: Red;
+		background-color: rgba(255,255,255,.5);
 	}
 	
 	.buttonContain {
@@ -28,14 +39,18 @@
 		left: 50%;
 		-webkit-transform: translateX(-50%);
 		-ms-transform: translateX(-50%);
+		-o-transform: translateX(-50%);
 		transform: translateX(-50%);
 	}
 	
 	.navButs {
 		-webkit-transform: translateY(-50%);
 		-ms-transform: translateY(-50%);
+		-o-transform: translateY(-50%);
 		transform: translateY(-50%);
 		position: relative;
 		border-radius: 45%;
+		font-family: cursive;
+		font-size: 1.2em;
 	}
 }
