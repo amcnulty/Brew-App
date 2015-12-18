@@ -1,5 +1,5 @@
 html {
-	background: url(/img/backgrounds/beerBubbles.jpg) no-repeat center center fixed;
+	background: url(../img/backgrounds/beerBubbles.png) no-repeat center center fixed;
 	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -11,6 +11,7 @@ body {
 }
 
 @media (orientation: landscape), (orientation: portrait) {
+	
 	#app {
 		position: fixed;
 		left: 0px;

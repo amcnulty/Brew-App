@@ -28,16 +28,24 @@ window.onload = function() {
 		setButtonPadding();
 	}
 	
+	// Device ready callback. sets event listener to the menu button.
+	function menuButtonListener() {
+		// document.addEventListener("menubutton", showDimensions, false);
+	}
+	
 	//		VARIABLES
 	var windowWidth = $(window).width();
 	var windowHeight = $(window).height();
 	var app = document.getElementById("app");
-	var horizontalPadding = 0;
-	var verticalPadding = 0;
+	var horizontalPadding = null;
+	var verticalPadding = null;
 	var buttons = document.getElementsByClassName("navButs");
 	
 	// Event Listener for orientation change
-	window.addEventListener("orientationchange", orientChange, false);
+	$(window).resize(orientChange);
+	
+	// Event listener for the menu button
+	document.addEventListener("deviceready", menuButtonListener, false);
 	
 	setButtonColors();
 	orientChange();

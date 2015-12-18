@@ -45,7 +45,7 @@ window.onload = function() {
 	function resetMugs() {
 		for (var i = 0; i < mugs.length; i++) {
 			mugs[i].className = "mug";
-			mugs[i].src = "img/beerMugs/emptyMug.png";
+			mugs[i].src = "../img/beerMugs/emptyMug.png";
 		}
 	}
 	
@@ -61,11 +61,11 @@ window.onload = function() {
 	// Callback function on transitionend for the mug images
 	function transitionEnd(imgElement) {
 		if (imgElement.src.indexOf("empty") != -1 && imgElement.className.indexOf("change") != -1) {
-			imgElement.src = "img/beerMugs/fullMug.png";
+			imgElement.src = "../img/beerMugs/fullMug.png";
 			imgElement.className = "mug";
 		}
 		else if (imgElement.src.indexOf("full") != -1 && imgElement.className.indexOf("change") != -1) {
-			imgElement.src = "img/beerMugs/emptyMug.png";
+			imgElement.src = "../img/beerMugs/emptyMug.png";
 			imgElement.className = "mug";
 		}
 	}
