@@ -88,7 +88,8 @@ window.onload = function() {
 	//		EVENT LISTENERS
 	
 	// Event Listener for orientation change
-	window.addEventListener("orientationchange", setInlineNoteMargins, false);
+	// window.addEventListener("orientationchange", setInlineNoteMargins, false);
+	$(window).resize(setInlineNoteMargins);
 	
 	// Event listener for the onscreen menu button
 	document.getElementById("optionsButton").addEventListener("click", toggleOptionsMenu, false);

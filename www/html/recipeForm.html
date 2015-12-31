@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <script type="text/javascript" src="../js/jquery/jquery.js"></script>
+    </head>
+    <body>
+        <h1 id="topMessage">Recipe Creation Form</h1><br>
+        <h3 class="catagory">Recipe Title</h3>
+        <!--<form>-->
+            <input type="text" name="recipeTitle" id="titleyo">
+        <!--</form>-->
+        <h3 class="catagory">Fermentables</h3>
+        <!--<form>-->
+            <input type="text" name="ferment"><br>
+            <input type="text" name="ferment"><br>
+            <input type="text" name="ferment">
+        <!--</form>-->
+        <h3 class="catagory">Hops</h3>
+        <!--<form>-->
+            <input type="text" name="hops"><br>
+            <input type="text" name="hops"><br>
+            <input type="text" name="hops">
+        <!--</form>-->
+        <h3 class="catagory">Yeast</h3>
+        <!--<form>-->
+            <input type="text" name="yeast">
+        <!--</form>-->
+        <h3 class="catagory">Special Instructions</h3>
+        <!--<form>-->
+            <input type="text" name="instructions">
+        <!--</form>-->
+        <br>
+        <a id="formSubmitLink"><button id="saveBut">Save Recipe</button></a>
+        <a id="checkForFile"><button id="loadBut">Load Recipe</button></a>
+        <a id="showFile"><button id="showBut">Show Recipe</button></a>
+        <script type="text/javascript" src="../cordova.js"></script>
+        <script type="text/javascript" src="../js/recipeForm.js"></script>
+    </body>
+</html>
