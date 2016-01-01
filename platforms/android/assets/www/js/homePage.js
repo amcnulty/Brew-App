@@ -62,6 +62,7 @@ window.onload = function() {
     var errorHandler = function (fileName, e) {  
         var msg = '';
         recipeLink.href = "html/recipeForm.html";
+        recipeLink.href = "html/recipes.html";
         switch (e.code) {
         case FileError.QUOTA_EXCEEDED_ERR:
             msg = 'Storage quota exceeded';

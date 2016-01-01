@@ -37,14 +37,20 @@ window.onload = function() {
         readFromFile('recipes.json');
 	}
     
+    // Reads from the dataDirectory file path plus the filename that is passed to it.
+    // Has an onLoaded callback within that does the actions required after loading.
+    // Calls errorHandler if there is a problem loading.
     function readFromFile(fileName) {
         var pathToFile = cordova.file.dataDirectory + fileName;
+        // alert(pathToFile);
         window.resolveLocalFileSystemURL(pathToFile, function (fileEntry) {
+            // fileEntry.remove();
             fileEntry.file(function (file) {
                 var reader = new FileReader();
                 reader.onloadend = function (e) {
                     loadedRecipes = JSON.parse(this.result);
                     recipeLink.href = "html/recipes.html";
+                    // alert("Success");
                     return this.result;
                 };
                 reader.readAsText(file);
@@ -52,9 +58,11 @@ window.onload = function() {
         }, errorHandler.bind(null, fileName));
     }
     
+    // If there is an error while loading this function is called.
     var errorHandler = function (fileName, e) {  
         var msg = '';
         recipeLink.href = "html/recipeForm.html";
+        recipeLink.href = "html/recipes.html";
         switch (e.code) {
         case FileError.QUOTA_EXCEEDED_ERR:
             msg = 'Storage quota exceeded';
@@ -75,11 +83,7 @@ window.onload = function() {
             msg = 'Unknown error';
             break;
         };
-	}
-	
-	// Device ready callback. sets event listener to the menu button.
-	function menuButtonListener() {
-		// document.addEventListener("menubutton", showDimensions, false);
+        console.log("Error Loading: " + fileName + " " + msg);
 	}
 	
 	//		VARIABLES
@@ -96,9 +100,6 @@ window.onload = function() {
 	
 	// Event Listener for orientation change
 	$(window).resize(orientChange);
-	
-	// Event listener for the menu button
-	document.addEventListener("deviceready", menuButtonListener, false);
     
     // Event listener for checking the file system when device is ready.
     document.addEventListener("deviceready", checkFile, false);
